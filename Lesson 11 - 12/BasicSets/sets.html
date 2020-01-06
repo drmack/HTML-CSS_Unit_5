@@ -1,0 +1,69 @@
+
+<html>
+<head>
+<title>Basic Sets</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://static.codehs.com/gulp/1fd1e079bf6be1f1181a6d8af1dadaf6853df435/chs-js-lib/chs.js"></script>
+
+
+<style>
+canvas {
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+}
+
+pre {
+    border: 1px solid black;
+    display: inline-block;
+    width: 400px;
+    height: 500px;
+    background-color: #F5F5F5;
+}
+</style>
+
+</head>
+
+<body>
+<h1>Basic Sets</h1>
+
+
+
+<canvas
+width="400"
+height="500"
+class="codehs-editor-canvas"></canvas>
+<pre id="console"></pre>
+
+<script>
+window.onload = function() {
+
+    function start(){
+	var set = new Set();
+	set.add(4);
+	println(set);
+	
+	set.add(5);
+	println(set);
+	
+	set.add(4);
+	println(set);
+	
+	if(set.contains(4)){
+		println("4 is in the set!");
+	}
+	
+	println("Set size: " + set.size());
+}
+
+
+    if (typeof start === 'function') {
+        start();
+    }
+};
+</script>
+
+</body>
+</html>
