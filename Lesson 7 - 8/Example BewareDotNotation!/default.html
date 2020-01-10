@@ -1,0 +1,100 @@
+
+<html>
+<head>
+<title>Beware Dot Notation!</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://static.codehs.com/gulp/d41a38a4ddf0286552629c5530f0857b28521a97/chs-js-lib/chs.js"></script>
+
+
+<style>
+canvas {
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+}
+
+pre {
+    border: 1px solid black;
+    display: inline-block;
+    width: 400px;
+    height: 500px;
+    background-color: #F5F5F5;
+}
+</style>
+
+</head>
+
+<body>
+<h1>Beware Dot Notation!</h1>
+
+
+
+<canvas
+width="400"
+height="500"
+class="codehs-editor-canvas"></canvas>
+<pre id="console"></pre>
+
+<script>
+window.onload = function() {
+
+    function start(){
+    /*
+     * Be careful using dot notation for Object values!
+     * Dot notation looks at the literal string that follows
+     * the dot, which means we can't use it for variable names
+     * or keys with spaces.
+     *
+     * Look through this example to see this in action.
+     */
+    //==================================================
+    
+    // Valid use of dot notation
+	var phonebook = {};
+	phonebook.Sam = "111-1111";
+	
+	println(phonebook.Sam);
+	
+	phonebook.Sam = "444-4444";
+	println(phonebook.Sam);
+	
+	// Invalid use of dot notation
+	
+	// This will work
+	phonebook["Harry Potter"] = "123-1234";
+	
+	// This will not work (the key has a space)
+	// Try uncommenting the line to test it
+// 	phonebook.Harry Potter = "123-1234";
+	
+	// This will work
+	var key = "Sam";
+	println(phonebook[key]);
+	
+	// This will not work (key is a variable name)
+	// Try uncommenting the line to test it
+// 	println(phonebook.key);
+	
+	// This will work
+	var numbers = {
+	    "Soulja Boy": "678-999-8212"
+	};
+	
+	// This will not work (Soulja Boy has a space in his name)
+	// Try uncommenting this code to test it
+// 	var numbers = {
+// 	    Soulja Boy: "678-999-8212"
+// 	};
+}
+
+
+    if (typeof start === 'function') {
+        start();
+    }
+};
+</script>
+
+</body>
+</html>
