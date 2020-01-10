@@ -1,0 +1,75 @@
+
+<html>
+<head>
+<title>Array indexOf</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://static.codehs.com/gulp/d41a38a4ddf0286552629c5530f0857b28521a97/chs-js-lib/chs.js"></script>
+
+
+<style>
+canvas {
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+}
+
+pre {
+    border: 1px solid black;
+    display: inline-block;
+    width: 400px;
+    height: 500px;
+    background-color: #F5F5F5;
+}
+</style>
+
+</head>
+
+<body>
+<h1>Array indexOf</h1>
+
+
+
+<canvas
+width="400"
+height="500"
+class="codehs-editor-canvas"></canvas>
+<pre id="console"></pre>
+
+<script>
+window.onload = function() {
+
+    function indexOf(arr, str){
+	for(var i = 0; i < arr.length; i++){
+		var cur = arr[i];
+		if(cur == str){
+			return i;
+		}
+	}
+	return -1;
+}
+
+
+function start(){
+	var list = ["bread", "eggs", "milk", "cookies", "bananas", "tuna", "lettuce", "yogurt", "cheese", "chicken", "cucumbers", "orange juice", "salt", "doritos", "lemonade", "apples", "paper towels", "red onion", "minced garlic", "tumeric", "donuts", "bagels", "crackers", "red pepper", "green pepper", "spinach", "canola oil", "vanilla", "flour", "brown sugar", "powdered sugar", "lime"];
+	
+	
+	var idx = indexOf(list, "donuts");
+	println(idx);
+	
+	println(indexOf(list, "apple juice"));
+	
+	println(list.indexOf("donuts"));
+	println(list.indexOf("apple juice"));	
+}
+
+
+    if (typeof start === 'function') {
+        start();
+    }
+};
+</script>
+
+</body>
+</html>
